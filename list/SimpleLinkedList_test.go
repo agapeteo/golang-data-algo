@@ -98,7 +98,7 @@ func TestSimpleLinkedList_Append(t *testing.T) {
 
 	// then
 	expected := []interface{}{1, 2}
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -114,7 +114,7 @@ func TestSimpleLinkedList_AddFirst(t *testing.T) {
 
 	// then
 	expected := []interface{}{3, 2, 1}
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -133,7 +133,7 @@ func TestSimpleLinkedList_DeleteFirst(t *testing.T) {
 
 	// then
 	expected := []interface{}{3}
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -152,7 +152,7 @@ func TestSimpleLinkedList_DeleteLast(t *testing.T) {
 
 	// then
 	expected := []interface{}{1}
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -168,7 +168,7 @@ func TestSimpleLinkedList_Elements(t *testing.T) {
 
 	// then
 	expected := []interface{}{1, 2, 3}
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -184,7 +184,7 @@ func TestSimpleLinkedList_ReverseElements(t *testing.T) {
 
 	// then
 	expected := []interface{}{3, 2, 1}
-	if ! isEqual(expected, list.ReverseElements()) {
+	if !isEqual(expected, list.ReverseElements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.ReverseElements())
 	}
 }
@@ -196,7 +196,7 @@ func TestSimpleLinkedList_Elements_empty(t *testing.T) {
 
 	// then
 	expected := make([]interface{}, 0)
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -263,7 +263,7 @@ func TestSimpleLinkedList_InsertAfterIndex(t *testing.T) {
 
 	// then
 	expected := []interface{}{1, 2, 3}
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -281,7 +281,7 @@ func TestSimpleLinkedList_Reverse(t *testing.T) {
 
 	// then
 	expected := []interface{}{1, 2, 3}
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -295,8 +295,8 @@ func TestSimpleLinkedList_Empty(t *testing.T) {
 	list.Reverse()
 
 	// then
-	expected := []interface{}{}
-	if ! isEqual(expected, list.Elements()) {
+	var expected []interface{}
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -313,7 +313,7 @@ func TestSimpleLinkedList_TwoElements(t *testing.T) {
 
 	// then
 	expected := []interface{}{1, 2}
-	if ! isEqual(expected, list.Elements()) {
+	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
 }
@@ -335,5 +335,3 @@ func isEqual(a, b []interface{}) bool {
 
 	return true
 }
-
-
