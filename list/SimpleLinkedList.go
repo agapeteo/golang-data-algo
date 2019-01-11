@@ -6,6 +6,7 @@ import (
 
 var IndexOutOfBoundsError = errors.New("index out of bounds")
 var EmptyListError = errors.New("list is empty")
+var NoSuchElementError = errors.New("no such element")
 
 type node struct {
 	prev  *node
@@ -199,4 +200,48 @@ func (L *SimpleLinkedList) GetLast() interface{} {
 		return nil
 	}
 	return L.tail.value
+}
+
+func (L *SimpleLinkedList) Push(element interface{}) {
+	if element == nil {
+		return
+	}
+	L.AddFirst(element)
+}
+
+func (L *SimpleLinkedList) Pull() (interface{}, error) {
+	if L.Size() == 0 {
+		return nil, NoSuchElementError
+	}
+	var result = L.GetFirst()
+	L.DeleteFirst()
+
+	return result, nil
+}
+
+func (L *SimpleLinkedList) Peek() (interface{}, error) {
+	if L.Size() == 0 {
+		return nil, NoSuchElementError
+	}
+	var result = L.GetFirst()
+
+	return result, nil
+}
+
+func (L *SimpleLinkedList) Enqueue(element interface{}) {
+	if element == nil {
+		return
+	}
+	L.AddLast(element)
+}
+
+func (L *SimpleLinkedList) Dequeue() (interface{}, error) {
+	if L.size == 0 {
+		return nil, NoSuchElementError
+	}
+
+	var result = L.GetFirst()
+	L.DeleteFirst()
+
+	return result, nil
 }

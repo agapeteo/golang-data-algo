@@ -295,7 +295,7 @@ func TestSimpleLinkedList_Empty(t *testing.T) {
 	list.Reverse()
 
 	// then
-	var expected []interface{}
+	var expected = make([]interface{}, 0)
 	if !isEqual(expected, list.Elements()) {
 		t.Errorf("elements not equal. expected %v but got: %v", expected, list.Elements())
 	}
