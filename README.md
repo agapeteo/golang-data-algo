@@ -4,15 +4,10 @@ GoLang data structures and algorithms
 # Basic data structures
 - LinkedList
 - BinarySearchTree
-
-In progress:
 - Stack
 - Queue
-- HashMap
-- Priority Queue
 - Heap
-- Graph
 
+In progress:
+- HashMap
 
-- basic sort algos
-- more advanced data structures and algorithms
