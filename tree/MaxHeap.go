@@ -78,9 +78,7 @@ func siftUp(i int, e []int) {
 }
 
 func swap(i int, j int, e []int) {
-	var t = e[i]
-	e[i] = e[j]
-	e[j] = t
+	e[i], e[j] = e[j], e[i]
 }
 
 func (H *MaxHeap) Elements() []int {
