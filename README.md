@@ -7,7 +7,3 @@ GoLang data structures and algorithms
 - Stack
 - Queue
 - Heap
-
-In progress:
-- HashMap
-
