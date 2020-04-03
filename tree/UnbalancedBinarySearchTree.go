@@ -14,13 +14,13 @@ type UnbalancedBinarySearchTree struct {
 	root *node
 }
 
-func (T *UnbalancedBinarySearchTree) Add(newValue int) {
-	if T.root == nil{
-		T.root = newNode(newValue)
+func (t *UnbalancedBinarySearchTree) Add(newValue int) {
+	if t.root == nil{
+		t.root = newNode(newValue)
 		return
 	}
 
-	addToNode(T.root, newValue)
+	addToNode(t.root, newValue)
 }
 
 func addToNode(n *node, newValue int) {
@@ -39,12 +39,12 @@ func addToNode(n *node, newValue int) {
 	}
 }
 
-func (T *UnbalancedBinarySearchTree) OrderedElements() []int{
-	if T.root == nil {
+func (t *UnbalancedBinarySearchTree) OrderedElements() []int{
+	if t.root == nil {
 		return make([]int, 0)
 	}
 
-	var result = addToSlice(T.root, make([]int, 0))
+	var result = addToSlice(t.root, make([]int, 0))
 
 	return result
 }
@@ -61,12 +61,12 @@ func addToSlice(n *node, values []int) []int {
 	return values
 }
 
-func (T UnbalancedBinarySearchTree) Contains(value int) bool{
-	if T.root == nil {
+func (t UnbalancedBinarySearchTree) Contains(value int) bool{
+	if t.root == nil {
 		return false
 	}
 
-	return containsInNode(T.root, value)
+	return containsInNode(t.root, value)
 }
 
 func containsInNode(n *node, value int) bool {
@@ -89,12 +89,12 @@ func containsInNode(n *node, value int) bool {
 	}
 }
 
-func (T *UnbalancedBinarySearchTree) Depth() int{
-	if T.root == nil{
+func (t *UnbalancedBinarySearchTree) Depth() int{
+	if t.root == nil{
 		return 0
 	}
 
-	return nodeDepth(T.root, 0)
+	return nodeDepth(t.root, 0)
 }
 
 func nodeDepth(n *node, curDepth int) int {
