@@ -1,6 +1,7 @@
 package tree
 
 import (
+	"reflect"
 	"testing"
 )
 
@@ -149,4 +150,24 @@ func isEqual(a, b []int) bool {
 	}
 
 	return true
+}
+
+func TestFromSorted(t *testing.T) {
+	type args struct {
+		s []int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int // depth
+	}{
+		{name: "0-10", args: args{[]int{1,2,3,4,5,6,7,8,9,10}}, want: 3},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := FromSorted(tt.args.s); !reflect.DeepEqual(got.Depth(), tt.want) {
+				t.Errorf("FromSorted() = %v, want %v", got.Depth(), tt.want)
+			}
+		})
+	}
 }
