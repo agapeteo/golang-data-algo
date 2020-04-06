@@ -24,19 +24,19 @@ func (t *UnbalancedBinarySearchTree) Add(newValue int) {
 }
 
 func FromSorted(s []int) UnbalancedBinarySearchTree {
-	root := fromSortedSlice(s, 0, len(s))
+	root := fromSortedSlice(s)
 
 	return UnbalancedBinarySearchTree{root}
 }
 
-func fromSortedSlice(s []int, start, end int) *node {
-	if start >= end {
+func fromSortedSlice(s []int) *node {
+	if len(s) == 0 {
 		return nil
 	}
-	mid := start + (end-start)/2
+	mid := len(s) / 2
 	value := s[mid]
-	left := fromSortedSlice(s, start, mid)
-	right := fromSortedSlice(s, mid+1, end)
+	left := fromSortedSlice(s[:mid])
+	right := fromSortedSlice(s[mid+1:])
 
 	return &node{value, left, right}
 }
